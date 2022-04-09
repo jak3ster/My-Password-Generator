@@ -3,7 +3,13 @@ JavaScript password generator
 
 ## Description
 
-This homework, helped me learn advanced CSS including media query screen, flexbox layout, responsive design, flexbox placement, box styling, CSS resets, typography, pseudo classes and elements, form styles and custom forms, wireframing and CSS variables to design and create my personal porfolio. This coursework will help me create a sample portfolio that shows my name and avatar, including links to sections about, work and contact. Links in the navigation UI scrolls to the corresponding sections and resize to view the site on various screens and devices making the page responsive layout and adapts to viewport. The activities have helped me create a modern websites that employers and clients are looking for. Using these skills will help me make websites more responsive more easily so, whatever kind or size of device someone is using to view your site, it looks fantastic and works well.
+This homework, helped me learn JavaScript using script console logs, variables, primitive types (e.g. string, integers, booleans and undefined), logical comparisons and operators, conditional statements, arrays, iterations, functions, global and local scopes, methods (e.g. arithmetic, comparison, logical operators), objects and properties and using this to get relative properties. These activities help me create a password generator that can be used as a secure password. When the generate password button is clicked, a series of prompts for password criteria including length of the password at least 8 characters and no more than 128 characters, character types to include in the password such as lowercase, uppercase, numeric, and/or special characters. Each prompt input is validated and at least one character type should be selected
+WHEN all prompts are answered
+THEN a password is generated that matches the selected criteria
+WHEN the password is generated
+THEN the password is either displayed in an alert or written to the page
+
+This coursework will help me create a sample portfolio that shows my name and avatar, including links to sections about, work and contact. Links in the navigation UI scrolls to the corresponding sections and resize to view the site on various screens and devices making the page responsive layout and adapts to viewport. The activities have helped me create a modern websites that employers and clients are looking for. Using these skills will help me make websites more responsive more easily so, whatever kind or size of device someone is using to view your site, it looks fantastic and works well.
 
 ## Installation
 

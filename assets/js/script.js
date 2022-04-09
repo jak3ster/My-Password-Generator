@@ -7,7 +7,6 @@ function writePassword() {
   var passwordText = document.querySelector("#password");
 
   passwordText.value = password;
-  console.log("Your password:" + password);
 
 }
 
@@ -53,7 +52,11 @@ function generatePassword(){
 
   // Loop thru the requirements by the number of characters set in useLength
   while (true){
-    
+    // Validated at least one character type is selected
+    if (!useLower && !useUpper && !useNumber && !useSpecial){
+      return "No character type was selected.";
+    }
+
     // Include lowercase to password
     if (useLower){
       // Get randomize number from alpha array
@@ -105,7 +108,7 @@ function generatePassword(){
     // Include special character to password
     if (useSpecial){
       // Set special character pool in array
-      var specialCharacter = '!@#$%^&*()_+~`|}{[]\:;?,./-=';
+      var specialCharacter = " !\"#$%&'()*+,-./:;<=>?@[\]^_`{|}~";
       
       // Get randomize number from special character array
       specialIndex = Math.ceil(specialCharacter.length * Math.random()*Math.random());
@@ -121,29 +124,19 @@ function generatePassword(){
         break;
       }
     }
-    // // fail safe
-    // count++;
-    // if (count == 128){
-    //   console.log("exceeded max count!");
-    //   break;
-    // }
   }
   
   // Remove character from the array and output as a string
   password = character.join('');
-  console.log("Character count:" + password.length);
 
   // return string generated
   return password;
 }
 
 // function to verify if two array equal each other return true/false
-function lengthChecker(length1, length2){
-  if (length1 == length2){
+function lengthChecker(arrlength1, arrlength2){
+  if (arrlength1 == arrlength2){
     return true;
   }
   return false;
 }
-
-
-
