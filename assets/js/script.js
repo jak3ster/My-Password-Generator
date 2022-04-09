@@ -1,5 +1,7 @@
 // Assignment Code
 var generateBtn = document.querySelector("#generate");
+var invalidText = "Invalid character length.";    // Invalid text error
+var copyBtn = document.querySelector('#copy');    // Grab html id copy button
 
 // Write password to the #password input
 function writePassword() {
@@ -8,6 +10,18 @@ function writePassword() {
 
   passwordText.value = password;
 
+  // Check if password string is not null and does not start with invalidText
+  if (password && !password.startsWith(invalidText)){
+    copyBtn.hidden = false;     // Switch copy button from hidden to show
+    copyBtn.className += "btn"; // Add the btn class to add CSS
+    generateBtn.style.backgroundColor = "green"; // Change generate button color after password is generated
+    copyBtn.style.backgroundColor = "green";  // Change copy button color after password is generated
+
+    // Copy password string to clipboard for use
+    if (navigator && navigator.clipboard && navigator.clipboard.writeText){
+      navigator.clipboard.writeText(password);
+    }
+  } 
 }
 
 // Add event listener to generate button
@@ -29,8 +43,7 @@ function generatePassword(){
   // Generate alphabet in an array
   const alpha = Array.from(Array(26)).map((e, i) => i + 65);
   const alphabetUpper = alpha.map((x) => String.fromCharCode(x));
-  // Get lowercase from alpha array
-  const alphabetLower = [];
+    const alphabetLower = [];     // Get lowercase from alpha array
   alphabetUpper.forEach(element => {
     alphabetLower.push(element.toLowerCase());
   });
@@ -40,7 +53,6 @@ function generatePassword(){
   if (uselength >= 8 && uselength <= 128){
     passwordLength = uselength;  
   } else {
-    var invalidText = "Invalid character length.";
     alert(invalidText);
     return invalidText;
   }
